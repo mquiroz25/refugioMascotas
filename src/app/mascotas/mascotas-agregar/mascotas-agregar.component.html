@@ -1,0 +1,37 @@
+
+<h1>Agregar Mascota para adopción</h1>
+<form clrForm clrLayout="horizontal" [formGroup]="mascotaForm" (ngSubmit)="onSubmit()">
+
+        <clr-input-container>
+                <label>Nombre</label>
+                <input clrInput type="text" formControlName="nombre" required />
+                <clr-control-error>Debe indicar un nombre</clr-control-error>
+        </clr-input-container>
+
+
+        <clr-input-container>
+                <label>Tipo</label>
+                <input clrInput type="text" formControlName="tipo" required/>
+                <clr-control-error>Debe indicar un tipo</clr-control-error>
+        </clr-input-container>
+
+        <clr-input-container>
+                <label>Edad</label>
+                <input clrInput type="number"  formControlName="edad" required/>
+                <clr-control-error>Debe indicar una edad (solo numeros)</clr-control-error>
+        </clr-input-container>
+
+        <clr-input-container>
+                <label>Descripcion</label>
+                <input clrInput type="text" formControlName="descripcion"  required/>
+                <clr-control-error>Debe indicar una descripcion</clr-control-error>
+        </clr-input-container>
+
+        <button class="btn btn-success" type="submit" [disabled]="!mascotaForm.valid">Agregar</button>
+
+        <p>Form Status:{{mascotaForm.status}}</p>
+</form>
+
+
+
+  
