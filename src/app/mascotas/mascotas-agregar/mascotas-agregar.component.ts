@@ -19,8 +19,6 @@ export class MascotasAgregarComponent implements OnInit {
     descripcion: ['',Validators.required]
   });
 
-
-  
   constructor(private fb: FormBuilder,private mascotaService:MascotasService,private router:Router) { }
 
   onSubmit() {
@@ -30,20 +28,11 @@ export class MascotasAgregarComponent implements OnInit {
       this.router.navigate(['/mascotas-listar']);
       console.log("mascota agregada");
 });
-
-
-
-
-
   }
 
-
-reset(){
-
+  reset(){
   this.mascotaForm.reset();
 }
-
-
 
   ngOnInit() {
   }

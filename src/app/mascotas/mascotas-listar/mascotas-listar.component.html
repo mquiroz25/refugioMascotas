@@ -9,6 +9,7 @@
             <th>Tipo</th>
             <th>Edad</th>
             <th>Descripcion</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,11 @@
             <td>{{mascota.tipo}}</td>
             <td>{{mascota.edad}}</td>
             <td>{{mascota.descripcion}}</td>
+            <td class="acciones">
+                <button type="button" class="btn btn-icon" aria-label="editar" [routerLink]="['/mascotas-editar', mascota.id]">
+                    <clr-icon shape="pencil"></clr-icon>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

@@ -1,5 +1,5 @@
 
-<h1>Agregar Mascota para adopción</h1>
+<h1>Editar Mascota</h1>
 <form clrForm clrLayout="horizontal" [formGroup]="mascotaForm" (ngSubmit)="onSubmit()">
 
         <clr-input-container>
@@ -26,10 +26,9 @@
                 <clr-control-error>Debe indicar una descripcion</clr-control-error>
         </clr-input-container>
         <br>
-        <button class="btn btn-success" type="submit" [disabled]="!mascotaForm.valid">AGREGAR</button>
-        <button class="btn btn-primary" type="reset" (click)="reset()">LIMPIAR</button>
+        <button class="btn btn-success" type="submit">ACTUALIZAR</button>
         <button class="btn btn-primary-outline" routerLink="/mascotas-listar">CANCELAR</button>
-        
+    
         <p>Form Status:{{mascotaForm.status}}</p>
 </form>
 
