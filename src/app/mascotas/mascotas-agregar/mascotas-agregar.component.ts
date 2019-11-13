@@ -31,7 +31,19 @@ export class MascotasAgregarComponent implements OnInit {
       console.log("mascota agregada");
 });
 
+
+
+
+
   }
+
+
+reset(){
+
+  this.mascotaForm.reset();
+}
+
+
 
   ngOnInit() {
   }
