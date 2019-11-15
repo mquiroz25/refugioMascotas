@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MascotasService } from '../shared/mascotas.service';
 import { Mascota } from '../shared/mascota';
@@ -9,6 +9,12 @@ import { Mascota } from '../shared/mascota';
   styleUrls: ['./mascotas-detalle.component.css']
 })
 export class MascotasDetalleComponent implements OnInit {
+
+  @Input() nombre: string;
+  @Input() tipo: string;
+  @Input() foto: string;
+  @Input() descripcion: string;
+  @Input() edad: string;
 
   mascota:Mascota;
   constructor(private route: ActivatedRoute,private mascotaService:MascotasService) { }
