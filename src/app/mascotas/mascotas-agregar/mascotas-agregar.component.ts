@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MascotasService } from '../shared/mascotas.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, AbstractControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,13 +8,25 @@ import { Router } from '@angular/router';
   selector: 'app-mascotas-agregar',
   templateUrl: './mascotas-agregar.component.html',
   styleUrls: ['./mascotas-agregar.component.css']
+
+  
 })
+
+
 export class MascotasAgregarComponent implements OnInit {
 
-  mascotaForm = this.fb.group({
-    nombre: ['',Validators.required],
+   ageValidator (control: AbstractControl):{[key: string]: boolean} | null {
+    if(control.value<0 || control.value>120){
+    return {'ageValidator': true}
+    }
+    return null;
+    };
+
+    
+  public mascotaForm = this.fb.group({
+    nombre: ['', Validators.required],
     tipo: ['',Validators.required],
-    edad: ['',Validators.required],
+    edad: ['',[Validators.required,this.ageValidator]],
     descripcion: ['',Validators.required]
   });
 
@@ -35,5 +47,8 @@ export class MascotasAgregarComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+  
 
 }

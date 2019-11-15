@@ -17,8 +17,9 @@
         <clr-input-container>
                 <label>Edad</label>
                 <input clrInput type="number"  formControlName="edad" required/>
-                <clr-control-error>Debe indicar una edad (solo numeros)</clr-control-error>
+                <clr-control-error *clrIfError="'required'">Debe indicar una edad</clr-control-error>
         </clr-input-container>
+        <span *ngIf= "mascotaForm.get('edad').errors?.ageValidator">La edad debe estar entre 0 y 120</span>
 
         <clr-input-container>
                 <label>Descripcion</label>
