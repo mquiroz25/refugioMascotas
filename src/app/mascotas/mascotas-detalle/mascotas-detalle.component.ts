@@ -10,11 +10,7 @@ import { Mascota } from '../shared/mascota';
 })
 export class MascotasDetalleComponent implements OnInit {
 
-  @Input() nombre: string;
-  @Input() tipo: string;
-  @Input() foto: string;
-  @Input() descripcion: string;
-  @Input() edad: string;
+  @Input() model: Mascota;
 
   mascota:Mascota;
   constructor(private route: ActivatedRoute,private mascotaService:MascotasService) { }
@@ -24,8 +20,6 @@ export class MascotasDetalleComponent implements OnInit {
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
 
      this.mascotaService.getMascota(id).subscribe(data=>this.mascota=data);
-
-
   }
 
 }

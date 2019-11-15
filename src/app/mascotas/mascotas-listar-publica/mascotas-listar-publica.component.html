@@ -9,7 +9,7 @@
 <clr-accordion>
     <clr-accordion-panel *ngFor="let mascota of mascotas">
       <clr-accordion-title>{{mascota.nombre}}</clr-accordion-title>
-      <clr-accordion-content *clrIfExpanded><app-mascotas-detalle nombre="{{mascota.nombre}}" tipo="{{mascota.tipo}}" descripcion="{{mascota.descripcion}}" foto="{{mascota.foto}}" edad="{{mascota.edad}}"></app-mascotas-detalle></clr-accordion-content>
+      <clr-accordion-content *clrIfExpanded><app-mascotas-detalle [model] ="mascota"></app-mascotas-detalle></clr-accordion-content>
     </clr-accordion-panel>
 </clr-accordion>
 
