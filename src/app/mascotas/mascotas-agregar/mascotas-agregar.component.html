@@ -10,6 +10,12 @@
         <span *ngIf= "mascotaForm.get('nombre').errors?.stringUnic">No puede tener segundo nombre</span>
 
         <clr-input-container>
+                <label>Foto</label>
+                <input clrInput type="text" formControlName="foto" required />
+                <clr-control-error *clrIfError="'required'">Debe agregar una foto</clr-control-error>
+        </clr-input-container>
+
+        <clr-input-container>
                 <label>Tipo</label>
                 <input clrInput type="text" formControlName="tipo" required/>
                 <clr-control-error>Debe indicar un tipo</clr-control-error>

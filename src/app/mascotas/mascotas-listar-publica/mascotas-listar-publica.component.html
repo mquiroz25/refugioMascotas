@@ -1,0 +1,13 @@
+<h1>Mascotas para adoptar</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mascota of mascotas">
+            <a [routerLink]="['/mascotas-detalle', mascota.id]"><td>{{mascota.nombre}}</td></a>
+        </tr>
+    </tbody>
+</table>

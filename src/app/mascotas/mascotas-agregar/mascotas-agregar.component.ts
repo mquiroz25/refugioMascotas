@@ -38,6 +38,7 @@ export class MascotasAgregarComponent implements OnInit {
     
   public mascotaForm = this.fb.group({
     nombre: ['',[Validators.required,this.stringUnic]],
+    foto: ['',Validators.required],
     tipo: ['',Validators.required],
     edad: ['',[Validators.required,this.ageValidator]],
     descripcion: ['',Validators.required]
@@ -60,8 +61,5 @@ export class MascotasAgregarComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
-  
 
 }

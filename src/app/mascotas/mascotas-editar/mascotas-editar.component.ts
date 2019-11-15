@@ -14,6 +14,7 @@ export class MascotasEditarComponent implements OnInit {
 
   mascotaForm = this.fb.group({
     id:['',Validators.required],
+    foto:['',Validators.required],
     nombre: ['',Validators.required],
     tipo: ['',Validators.required],
     edad: ['',Validators.required],
