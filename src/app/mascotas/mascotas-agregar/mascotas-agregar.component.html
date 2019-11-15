@@ -5,8 +5,9 @@
         <clr-input-container>
                 <label>Nombre</label>
                 <input clrInput type="text" formControlName="nombre" required />
-                <clr-control-error>Debe indicar un nombre</clr-control-error>
+                <clr-control-error *clrIfError="'required'">Debe indicar un nombre</clr-control-error>
         </clr-input-container>
+        <span *ngIf= "mascotaForm.get('nombre').errors?.stringUnic">No puede tener segundo nombre</span>
 
         <clr-input-container>
                 <label>Tipo</label>

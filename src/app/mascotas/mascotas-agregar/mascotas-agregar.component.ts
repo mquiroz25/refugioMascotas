@@ -22,9 +22,22 @@ export class MascotasAgregarComponent implements OnInit {
     return null;
     };
 
+
+    stringUnic (control: AbstractControl):{[key: string]: boolean} | null {
+
+       const string = String(control.value);
+
+       const array = string.split(" ");
+
+       if (array.length>1)
+      {
+      return {'stringUnic': true}
+      }
+      return null;
+      };
     
   public mascotaForm = this.fb.group({
-    nombre: ['', Validators.required],
+    nombre: ['',[Validators.required,this.stringUnic]],
     tipo: ['',Validators.required],
     edad: ['',[Validators.required,this.ageValidator]],
     descripcion: ['',Validators.required]
